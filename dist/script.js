@@ -19,6 +19,7 @@
   "ribbon1": "Listen with care",
   "ribbon2": "Understand gently",
   "ribbon3": "Cherish the bond",
+  "ribbon4": "Translate with humor",
   "aboutEyebrow": "IT’S LOVELY TO MEET YOU",
   "aboutTitle": "I’m Ling.<br>I listen to pets and help you understand, one step at a time.",
   "aboutBody": "I’m Ling, the pet communicator behind 來KU通RO. I’ve shared over 100 pet communication sessions with animals and their caregivers. Through intuition and telepathy, I connect with pets and help you understand how you both feel.",
