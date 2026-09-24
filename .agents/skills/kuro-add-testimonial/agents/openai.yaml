@@ -1,0 +1,6 @@
+interface:
+  display_name: "來KU通RO・新增見證案例"
+  short_description: "將寵物溝通紀錄整理成溫暖的中英文故事，加入可持續擴充的輪播與彈窗"
+  default_prompt: "使用 $kuro-add-testimonial，將我提供的溝通紀錄整理成下一則中英文見證，加入網站輪播與完整故事彈窗。"
+policy:
+  allow_implicit_invocation: true
