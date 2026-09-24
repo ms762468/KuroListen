@@ -208,6 +208,15 @@
   }
   document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
 
+  // Keep the booking accordion exclusive in browsers without details name support.
+  const bookingItems = [...document.querySelectorAll('.booking-item')];
+  bookingItems.forEach(item => item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    bookingItems.forEach(other => {
+      if (other !== item) other.open = false;
+    });
+  }));
+
   const track = document.getElementById('case-track');
   const slides = [...track.children];
   const position = document.getElementById('case-position');
