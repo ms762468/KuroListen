@@ -16,3 +16,5 @@ html{background:var(--cream)}html[data-initializing] body{visibility:hidden}html
 @media(max-width:650px){nav{gap:6px;font-size:12px}.booking-item{padding-inline:12px}.booking-item summary{gap:12px;font-size:18px;padding-block:19px}.booking-body{padding-left:0;font-size:15px}.booking-guide .section-heading>p{margin-bottom:28px}html[lang=en] nav{flex-wrap:wrap;justify-content:center;column-gap:16px;row-gap:8px}html[lang=en]{scroll-padding-top:170px}}
 
 nav a{white-space:nowrap}@media(max-width:650px){nav{flex-wrap:wrap;justify-content:center;column-gap:16px;row-gap:8px}html{scroll-padding-top:170px}}
+/* Footer Instagram account button. */
+.footer-contact>a{align-self:flex-start;display:inline-flex;align-items:center;background:var(--blue);color:#fff;padding:8px 20px;border-radius:24px;margin-block:8px 12px;transition:background .2s}.footer-contact>a strong{color:inherit}.footer-contact>a:hover{background:#3b5e7f}
