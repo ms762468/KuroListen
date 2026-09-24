@@ -30,6 +30,7 @@
   "skip": "Skip to content",
   "brandSub": "Ling · Pet Communicator",
   "navigation": "Main navigation",
+  "headerLine": "Official LINE",
   "language": "Language",
   "navHome": "Home",
   "navAbout": "About Me",
