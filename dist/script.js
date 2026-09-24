@@ -14,7 +14,7 @@
   "heroBody": "Some feelings don’t come with words.<br>Let’s take a little time to listen, together.",
   "book": "Book Now",
   "discover": "Explore services",
-  "artAlt": "A gentle illustration of a cream dog and a grey-and-white cat resting together",
+  "artAlt": "A gentle botanical illustration of black-and-tan KURO surrounded by a cat, guinea pig, hamster, hedgehog, rabbit and bird",
   "artCaption": "Every bond has a language of its own.",
   "ribbon1": "Listen with care",
   "ribbon2": "Understand gently",
