@@ -247,8 +247,6 @@
     clearTimeout(window.siteInitFallback);
     delete document.documentElement.dataset.initializing;
   };
-  // Give the preloaded local typeface a chance to be ready before the first visible paint.
-  // The head's fallback timer keeps content readable if loading fails or stalls.
-  if (document.fonts) document.fonts.load('16px "Iansui"').then(showPage, showPage);
-  else showPage();
+  // Font visibility is managed independently by the early head script.
+  showPage();
 })();
