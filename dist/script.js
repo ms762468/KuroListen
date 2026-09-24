@@ -1,6 +1,32 @@
 (() => {
   'use strict';
   const english = {
+
+  "navBooking": "Booking Guide",
+  "bookingEyebrow": "BEFORE WE MEET",
+  "bookingIntro": "From booking to preparation, please read these notes before making an appointment.",
+  "bookingLine": "Book via official LINE",
+  "bookingTitle1": "How to book",
+  "bookingBody1": "<p>Ling announces all available slots for the following month on Instagram <strong>@kuro_listen</strong> at <strong>20:00 on the 20th of each month</strong>.</p><p>Once bookings open, please book through the <strong>official LINE account</strong>. Send the times you can attend, ranked in order of preference.</p><p>After sending your request, please wait for confirmation before sending more messages. Additional messages may change your place in the queue and affect your booking.</p>",
+  "bookingTitle2": "Booking confirmation",
+  "bookingBody2": "<p>A successful booking receives a <strong>confirmation message (「成交通知」)</strong> stating the appointment date and time. Your booking is confirmed only when you receive this message.</p><p>If you have not received one, any remaining slots will be announced on Instagram.</p>",
+  "bookingTitle3": "Who can book",
+  "bookingBody3": "<p>You must be the pet’s <strong>primary caregiver</strong>. Former partners and people who previously cared for the pet cannot book.</p><p>Please also be willing to share feedback <strong>within 7 days after the session</strong>, using either option:</p><ul><li>Share your experience or feedback in an Instagram Story and tag <strong>@kuro_listen</strong>.</li><li>Send feedback through LINE and allow Ling to share it on Instagram.</li></ul>",
+  "bookingTitle4": "Which pets can join",
+  "bookingBody4": "<ul><li>Your pet must be <strong>at least 10 months old</strong>.</li><li>Your pet must have lived with their caregiver for <strong>at least 3 months</strong>, allowing time to get to know each other.</li></ul><p>The three participants may have different perspectives. Please bring an <strong>open mind and a willingness to discuss</strong> as we explore your pet’s inner world.</p>",
+  "bookingTitle5": "Session format",
+  "bookingBody5": "<p>Each session lasts <strong>60 minutes</strong> and uses <strong>real-time text communication between caregiver, pet and Ling</strong>. The caregiver needs to be able to exchange messages with Ling comfortably.</p><p>Your pet may be asleep or away from you, provided they are <strong>not physically unwell at the time</strong>.</p>",
+  "bookingTitle6": "What to send beforehand",
+  "bookingBody6": "<p>Please send your questions, photos and how you refer to yourself when speaking to your pet <strong>2 days before the session</strong>.</p><p>Prepare <strong>4–5 high-resolution photos</strong>, all taken <strong>within the last 3 months</strong>, bright and clear. At least one should show your pet <strong>facing forward, looking directly at the camera, with their upper body or full body visible</strong>.</p><p>You may also send photos of people, objects or places you plan to discuss, to help the conversation flow.</p>",
+  "bookingTitle7": "Topics to prepare",
+  "bookingBody7": "<p>Topics can include favorite foods, toys, places and friends, as well as your pet’s thoughts and feelings.</p><p><strong>Medical procedures and requests to force an animal to change their behavior are not discussed.</strong> Please do not emotionally pressure your pet; Ling will skip questions of this kind.</p>",
+  "bookingTitle8": "Help your pet prepare",
+  "bookingBody8": "<p>During the <strong>3 days before the session</strong>, remind your pet at least once each day:</p><blockquote>“In a few days, a friendly lady will come to chat with you.”</blockquote><p>This preparation matters: it helps your pet know what to expect and makes the conversation smoother, so Ling is not a stranger interrupting unexpectedly.</p>",
+  "bookingTitle9": "Punctuality and cancellations",
+  "bookingBody9": "<p>If you need to cancel, please notify Ling <strong>at least 60 minutes before your appointment</strong>. You may then book another session.</p><p>Please be online at the agreed time. Ling will wait <strong>an additional 10 minutes</strong>; if the caregiver still does not appear, <strong>future bookings will not be accepted</strong>.</p><p>Any session time lost due to lateness remains your responsibility.</p>",
+  "bookingTitle10": "Ending a session and agreement",
+  "bookingBody10": "<p>If Ling or the animal feels uncomfortable during the session, Ling may <strong>end the session immediately</strong>. The animal’s physical, emotional and spiritual comfort comes first.</p><p><strong>Making a booking indicates agreement to all the rules and requirements above.</strong></p>"
+,
   "skip": "Skip to content",
   "brandSub": "Ling · Pet Communicator",
   "navigation": "Main navigation",
