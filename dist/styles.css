@@ -17,4 +17,4 @@ html{background:var(--cream)}html[data-initializing] body{visibility:hidden}html
 
 nav a{white-space:nowrap}@media(max-width:650px){nav{flex-wrap:wrap;justify-content:center;column-gap:16px;row-gap:8px}html{scroll-padding-top:170px}}
 /* Footer Instagram account button. */
-.footer-contact>a{align-self:flex-start;display:inline-flex;align-items:center;background:var(--blue);color:#fff;padding:8px 20px;border-radius:24px;margin-block:8px 12px;transition:background .2s}.footer-contact>a strong{color:inherit}.footer-contact>a:hover{background:#3b5e7f}
+.footer-contact>a{align-self:flex-start;display:inline-flex;align-items:center;background:var(--mist);color:var(--ink);padding:8px 20px;border-radius:24px;margin-block:8px 12px;transition:background .2s}.footer-contact>a strong{color:inherit}.footer-contact>a:hover{background:#d5e4f0}
