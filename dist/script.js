@@ -1,6 +1,18 @@
 (() => {
   'use strict';
   const english = {
+  "shuiPhotoTitle1": "A water shop—and a very clean Shui.",
+  "shuiPhotoTitle2": "Not chubby. Strong.",
+  "shuiPhotoTitle3": "Say “I love you” before goodbye.",
+  "shuiPhotoText1": "Our chat about shop life led to the family’s water business. I asked if they sold water filters, and his caregiver confirmed it. Shui also insisted that he was clean water.",
+  "shuiPhotoText2": "Shui was quick to defend his build—and included Shunshun in the same team. This big brother certainly believes in himself.",
+  "shuiPhotoText3": "As we were finishing, Shui still wanted to hear his sister say she loved him. After all the cheeky talk, he wanted their love said out loud.",
+  "shuiPhotoAlt1": "Shui wearing a harness and being held by a family member in the shop",
+  "shuiPhotoAlt2": "Shui sitting on grass with his mouth open, facing the camera",
+  "shuiPhotoAlt3": "Shui resting in his bed against a blue toy",
+  "shuiPhotosLabel": "Three moments from Shui’s story",
+  "shuiCleanTitle": "A water shop, and Shui’s insistence that he was clean water.",
+  "shuiCleanBody": "At first, I only knew Shui was watching the shop. As we talked, I shared that he said his family sold water. I asked whether it was a water-filter business, and his caregiver said yes. The picture of his everyday shop life became clearer. Shui also emphasized that he was clean water, linking the family business to his name with his own very serious logic. His caregiver explained that he was actually named Shui because he had been found by a stream, and that he joined the family before the shop opened. That wonderfully cheeky explanation became one of the memorable moments of our chat.",
   "soniaPhotoTitle1": "We can chat from a little distance.",
   "soniaPhotoTitle2": "Exercise is good. So is resting with Mum.",
   "soniaPhotoTitle3": "A familiar, caring big brother.",
@@ -105,7 +117,7 @@
   "footerTag": "Because every little heart deserves to be heard.",
   "footerContact": "All bookings via our official LINE account",
   "backTop": "Back to top ↑",
-  "copyright": "© 2026 來KU通RO · Ling",
+  "copyright": "© 2026 來KU通RO · Ling. All rights reserved.<br>Rights to original site text and design are reserved by 來KU通RO. Pet photos and caregiver feedback belong to their respective rights holders.<br>Please obtain permission before republication or commercial reuse. Third-party materials remain subject to their own licenses.",
   "caseLabel": "Manman’s story · General reading",
   "caseTitle": "“I love them even more than treats.”",
   "caseSummary": "Manman is gentle and a little shy—but she knows how to ask for more treats! From deciding who gets to be called “Mum” to sharing how much she loves her caregivers, her story is full of little moments that make you smile.",
