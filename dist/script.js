@@ -1,6 +1,18 @@
 (() => {
   'use strict';
   const english = {
+  "manmanPhotoTitle1": "Who gets to be Mum?",
+  "manmanPhotoTitle2": "A few more treats, please?",
+  "manmanPhotoTitle3": "I love you more than treats.",
+  "manmanPhotoText1": "Manman had her own names for the family: her caregiver was Little Sister, while she was Mum—because she had had puppies.",
+  "manmanPhotoText2": "She did not ask for as much as her bigger little brother—just a little more. Our chat included a sweet negotiation over treats.",
+  "manmanPhotoText3": "Being held and resting together mattered most. Her caregiver replied, “We’re so happy to have her, too.”",
+  "manmanPhotoAlt1": "Manman wearing a harness and being held outdoors",
+  "manmanPhotoAlt2": "Manman in a pink-purple outfit beside a rope toy",
+  "manmanPhotoAlt3": "Manman in a festive outfit beside a Christmas tree and toys",
+  "manmanPhotosLabel": "Three moments from Manman’s story",
+  "previousPhoto": "Previous photo",
+  "nextPhoto": "Next photo",
 
   "navBooking": "Booking Guide",
   "bookingEyebrow": "BEFORE WE MEET",
@@ -217,6 +229,21 @@
       if (other !== item) other.open = false;
     });
   }));
+
+  document.querySelectorAll('.photo-story').forEach(story => {
+    const photos = story.querySelector('.pet-photo-track');
+    const cards = [...photos.children];
+    const counter = story.querySelector('.photo-position');
+    const nearestPhoto = () => cards.reduce((best, card, i) =>
+      Math.abs(card.offsetLeft - cards[0].offsetLeft - photos.scrollLeft) <
+      Math.abs(cards[best].offsetLeft - cards[0].offsetLeft - photos.scrollLeft) ? i : best, 0);
+    story.querySelectorAll('[data-photo-step]').forEach(button => button.addEventListener('click', () => {
+      const next = (nearestPhoto() + Number(button.dataset.photoStep) + cards.length) % cards.length;
+      photos.scrollTo({left: cards[next].offsetLeft - cards[0].offsetLeft,
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    }));
+    photos.addEventListener('scroll', () => { counter.textContent = (nearestPhoto() + 1) + ' / ' + cards.length; }, {passive:true});
+  });
 
   const track = document.getElementById('case-track');
   const slides = [...track.children];
