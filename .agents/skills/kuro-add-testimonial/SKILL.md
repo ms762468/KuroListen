@@ -1,13 +1,13 @@
 ---
 name: kuro-add-testimonial
-description: 為「來KU通RO」寵物溝通師 Ling 的網站新增或修改見證案例。當使用者提供溝通紀錄 TXT、要求抓重點、經典對話、奇蹟時刻，或新增第 N 則見證時使用；包含溫暖自然的中英文故事、可持續增加的輪播卡片與完整故事彈窗。
+description: 為來KU通RO新增或更新見證：將寵物照片與溝通對話整理成三張雙語照片卡片、手機輪播及完整故事彈窗。使用者提供新見證照片、對話紀錄，或要求補照片、修改故事時使用。
 ---
 
 # 來KU通RO：新增見證案例
 
 ## 找到現有網站
 
-- 預設專案：`C:/Users/USER/Desktop/my-personal-website`。先確認實際路徑與 `AGENTS.md`，若已搬移，以使用者指定位置為準。
+- 預設專案：`C:/Users/哲哥/OneDrive/文件/ChatGPT/KuroListen`。先確認實際路徑與 `AGENTS.md`，若已搬移，以使用者指定位置為準。
 - 現有靜態來源在 `dist/index.html`、`dist/styles.css`、`dist/script.js`；先讀現有案例與語言切換邏輯，再沿用其結構。
 - 保留療癒、幽默的藍色系、響應式版面、TW / EN 切換、Ling 英文名字及目前服務狀態。預約一律官方 LINE `https://lin.ee/TkrbwYs`。
 - 不產生或更新 `來KU通RO-手機預覽.html`，不自動執行 `build-mobile-preview.cjs`。使用者已取消這份檔案。
@@ -28,10 +28,20 @@ description: 為「來KU通RO」寵物溝通師 Ling 的網站新增或修改見
 - 中英文保留相同事件、幽默、情感、歸屬與不確定程度；翻譯不能新增證據或誇大能力。引文可自然翻譯，但不改變意思。
 - 中文寵物姓名以對話核實後的名字為準，不只依 TXT 檔名；英文名字沿用現有網站拼法。
 
+## 匯入照片與三張卡片
+
+- 先對照使用者指認的姓名與照片順序，確認主角、其他家人、已離世寵物的身分。看過照片再選版面；不因同為同一物種就混用身分。
+- 沿用現有饅饅與索妮亞案例：每個故事三張「照片＋簡短標題＋簡短敘述」卡片。照片通常依使用者提供順序；敘述取自核實的對話重點，不把照片場景當作溝通證據。
+- 桌面三張並排；手機一張一張左右滑動，提供上一張／下一張及照片計數。外層案例輪播切換故事，內層只切換該故事照片，兩者計數不能混用。不自動播放。
+- 額外配角照片可放進完整故事的相關段落，以 figure.story-memory 和雙語 figcaption 清楚標示。例如布布是索妮亞已離世的哥哥，照片放在哥哥段落，不當成索妮亞第四張照片。
+- 將核准使用的照片複製到 dist/assets/testimonials/<prefix>-1.jpg 等穩定路徑，保留使用者原檔。使用實際照片，不生成替代寵物。檢查方向、比例、臉部是否完整；附上正確的 width、height、loading="lazy"、decoding="async" 和可翻譯 alt。若數量不足，不複製照片硬湊三張；先完成可用素材，必要時詢問缺少的照片。
+- 沿用 .photo-story、.pet-photo-track、.pet-photo-card、.pet-photo-copy、.pet-photo-controls 與 .photo-position。卡片只放簡述，下方共用 .case-open.photo-story-open 按鈕連到該故事完整彈窗。
+- 目前通用 JS 會逐一初始化 .photo-story，使用 data-photo-step="-1" / "1" 控制內層輪播；直接重用，不為每個寵物再新增一套處理器。
+
 ## 加入輪播與彈窗，案例不設三則上限
 
 1. 先確認案例是否已存在。指定預留位置且仍是預留卡片時才替換；已有真實案例時依使用者要求修改或新增。沒有指定位置就追加在最後，不能把第四則覆蓋第三則。
-2. 在 `#case-track` 增加沿用現有結構的 `.case-slide`，包含 `.case-open` 按鈕。為新案例選唯一、穩定的英文前綴與 `aria-controls="<prefix>-dialog"`。
+2. 在 `#case-track` 增加 `.story.case-slide.photo-story`，以三张照片卡片和下方 `.case-open.photo-story-open` 按鈕組成一則案例。為新案例選唯一、穩定的英文前綴與 `aria-controls="<prefix>-dialog"`。
 3. 增加對應的原生 `<dialog class="case-dialog">`、唯一標題 ID、`aria-labelledby`、關閉按鈕 `.case-close` 與整理後全文。沿用既有彈窗事件，不重複綁定全域處理器。
 4. 中文內容在 HTML 的 `data-i18n` 節點；英文在 `script.js` 的 `english` 字典。新增每個文字鍵的英文翻譯，避免鍵名衝突；同步必要的 `data-i18n-aria` 無障礙文字。
 5. 輪播使用實際 `slides.length` 計數及取模，更新初始位置顯示為 `1 / N`。檢查沒有固定三則的陣列、限制或分母。保留左右切換、觸控滑動、減少動態效果設定與無自動播放的行為。
@@ -39,7 +49,14 @@ description: 為「來KU通RO」寵物溝通師 Ling 的網站新增或修改見
 
 ## 字型與驗證
 
-- 新增中文字後，必須更新芫荽子集字型，否則新字可能退回其他字型。使用本技能 `scripts/refresh_font.py <專案路徑>`，需要 Python 的 `fonttools` 與 `brotli`。從原始 `dist/assets/fonts/Iansui-Regular.ttf` 產生子集，不能從已縮減的字型再縮減。保留 OFL 授權、預載及避免重整閃爍的初始化流程。
+- 全站使用完整芫荽體 Iansui-Regular.woff2，新增文字不需重建子集。不要執行舊 scripts/refresh_font.py；它僅保留備查。保留完整字型預載與 data-font-loading 的顯示保護，避免首次載入閃出系統字型。
 - 執行 `node --check dist/script.js`。檢查新增翻譯鍵完整、HTML ID 唯一、每張卡片有對應彈窗、原有案例仍在、計數與實際案例數一致。
 - 在既有預覽（通常 `http://127.0.0.1:4173/#stories`）檢查 TW/EN 卡片和完整彈窗、最後一張到第一張的循環、關閉與 Escape、手機寬度下文字和按鈕。不要為了一次文字更新重建專案或覆蓋整個 JS。
 - 完成後簡短說明新增第幾則、選取哪些重點、中英文是否完成、驗證結果。區分本機更新與公開上線；只有實際發布成功才宣稱已上線。
+
+## 分階段儲存與發布
+
+- 本專案使用者已要求每個完成階段都保存在本機資料夾、建立清楚的 commit 並更新 GitHub。先完成檢查，再只提交此階段相關檔案，推送 main；不要修改無關工作。當次使用者要求暫不上線時，以當次指示為準。
+- GitHub Actions 發布 dist/ 到 GitHub Pages；查看該 commit 的部署結果，成功才說已上線。不因遠端分歧自動強制推送。
+- 檢查中英文卡片、照片載入、唯一 ID、所有新增翻譯鍵、照片與案例各自循環、對應故事開關／Escape／焦點返回、手機無橫向溢出。確認原有故事沒有被覆蓋、完整內容與重要更正仍保留。
+- 對外回報主角、三張卡片、額外照片位置、本機／GitHub 同步及 commit；原始對話 TXT、私密聯絡資訊不加入公開網站。
