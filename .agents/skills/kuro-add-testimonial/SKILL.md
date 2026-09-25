@@ -49,7 +49,7 @@ description: 為來KU通RO新增或更新見證：將寵物照片與溝通對話
 
 ## 字型與驗證
 
-- 全站使用完整芫荽體 Iansui-Regular.woff2，新增文字不需重建子集。不要執行舊 scripts/refresh_font.py；它僅保留備查。使用 font-display:optional；不預載大型字型、不隱藏整頁、不等待 document.fonts.ready。慢速首次造訪可用系統字型，避免空白與延遲換字型。
+- 全站使用完整芫荽體 Iansui-Regular.woff2，新增文字不需重建子集。不要執行舊 scripts/refresh_font.py；它僅保留備查。使用 font-display:swap；不預載大型字型、不隱藏整頁、不等待 document.fonts.ready。慢速首次造訪先顯示系統字型，完整芫荽體載入後必須套用，避免整頁空白等待。
 - 執行 `node --check dist/script.js`。檢查新增翻譯鍵完整、HTML ID 唯一、每張卡片有對應彈窗、原有案例仍在、計數與實際案例數一致。
 - 在既有預覽（通常 `http://127.0.0.1:4173/#stories`）檢查 TW/EN 卡片和完整彈窗、最後一張到第一張的循環、關閉與 Escape、手機寬度下文字和按鈕。不要為了一次文字更新重建專案或覆蓋整個 JS。
 - 完成後簡短說明新增第幾則、選取哪些重點、中英文是否完成、驗證結果。區分本機更新與公開上線；只有實際發布成功才宣稱已上線。

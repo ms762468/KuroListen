@@ -304,5 +304,5 @@
   let saved = 'zh';
   try { saved = localStorage.getItem('kuro-language') || 'zh'; } catch { /* Default to Traditional Chinese. */ }
   setLanguage(saved === 'en' ? 'en' : 'zh', false);
-  // Font loading never blocks content; CSS font-display: optional avoids late swaps.
+  // Font loading never blocks content; CSS font-display: swap applies Iansui as soon as it is ready.
 })();
