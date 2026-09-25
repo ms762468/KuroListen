@@ -1,6 +1,18 @@
 (() => {
   'use strict';
   const english = {
+  "soniaPhotoTitle1": "We can chat from a little distance.",
+  "soniaPhotoTitle2": "Exercise is good. So is resting with Mum.",
+  "soniaPhotoTitle3": "A familiar, caring big brother.",
+  "soniaPhotoText1": "I shared that Sonia wanted to keep a little distance while we talked. Of course—we could get to know each other at her own comfortable pace.",
+  "soniaPhotoText2": "A question about her wheel became a chat about resting with Mum. Her caregiver shared that she often held Sonia while sitting and watching shows.",
+  "soniaPhotoText3": "I described a darker, rounder big brother. Her caregiver identified him as Bubu, who had passed away, and recognized his familiar way of giving advice.",
+  "soniaPhotoAlt1": "Sonia resting on her caregiver’s arm",
+  "soniaPhotoAlt2": "Sonia peeking out of a yellow towel",
+  "soniaPhotoAlt3": "A close-up of Sonia wrapped in a yellow towel",
+  "soniaPhotosLabel": "Three moments from Sonia’s story",
+  "bubuPhotoAlt": "Big brother Bubu in front of his little bed",
+  "bubuPhotoCaption": "Big brother Bubu (Columbus) · Remembered with love after his passing.",
   "manmanPhotoTitle1": "Who gets to be Mum?",
   "manmanPhotoTitle2": "A few more treats, please?",
   "manmanPhotoTitle3": "I love you more than treats.",
