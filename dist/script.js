@@ -304,10 +304,5 @@
   let saved = 'zh';
   try { saved = localStorage.getItem('kuro-language') || 'zh'; } catch { /* Default to Traditional Chinese. */ }
   setLanguage(saved === 'en' ? 'en' : 'zh', false);
-  const showPage = () => {
-    clearTimeout(window.siteInitFallback);
-    delete document.documentElement.dataset.initializing;
-  };
-  // Font visibility is managed independently by the early head script.
-  showPage();
+  // Font loading never blocks content; CSS font-display: optional avoids late swaps.
 })();

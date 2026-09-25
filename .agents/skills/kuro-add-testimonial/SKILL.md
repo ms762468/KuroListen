@@ -34,7 +34,7 @@ description: 為來KU通RO新增或更新見證：將寵物照片與溝通對話
 - 沿用現有饅饅與索妮亞案例：每個故事三張「照片＋簡短標題＋簡短敘述」卡片。照片通常依使用者提供順序；敘述取自核實的對話重點，不把照片場景當作溝通證據。
 - 桌面三張並排；手機一張一張左右滑動，提供上一張／下一張及照片計數。外層案例輪播切換故事，內層只切換該故事照片，兩者計數不能混用。不自動播放。
 - 額外配角照片可放進完整故事的相關段落，以 figure.story-memory 和雙語 figcaption 清楚標示。例如布布是索妮亞已離世的哥哥，照片放在哥哥段落，不當成索妮亞第四張照片。
-- 將核准使用的照片複製到 dist/assets/testimonials/<prefix>-1.jpg 等穩定路徑，保留使用者原檔。使用實際照片，不生成替代寵物。檢查方向、比例、臉部是否完整；附上正確的 width、height、loading="lazy"、decoding="async" 和可翻譯 alt。若數量不足，不複製照片硬湊三張；先完成可用素材，必要時詢問缺少的照片。
+- 將核准使用的照片複製到 dist/assets/testimonials/<prefix>-1.jpg 等穩定路徑，保留使用者原檔。網站使用經縮圖與壓縮的 WebP 副本（直式照片最長邊約 1200px），並更新 src 與實際尺寸，避免直接載入數 MB 的原始照片。使用實際照片，不生成替代寵物。檢查方向、比例、臉部是否完整；附上正確的 width、height、loading="lazy"、decoding="async" 和可翻譯 alt。若數量不足，不複製照片硬湊三張；先完成可用素材，必要時詢問缺少的照片。
 - 沿用 .photo-story、.pet-photo-track、.pet-photo-card、.pet-photo-copy、.pet-photo-controls 與 .photo-position。卡片只放簡述，下方共用 .case-open.photo-story-open 按鈕連到該故事完整彈窗。
 - 目前通用 JS 會逐一初始化 .photo-story，使用 data-photo-step="-1" / "1" 控制內層輪播；直接重用，不為每個寵物再新增一套處理器。
 
@@ -49,7 +49,7 @@ description: 為來KU通RO新增或更新見證：將寵物照片與溝通對話
 
 ## 字型與驗證
 
-- 全站使用完整芫荽體 Iansui-Regular.woff2，新增文字不需重建子集。不要執行舊 scripts/refresh_font.py；它僅保留備查。保留完整字型預載與 data-font-loading 的顯示保護，避免首次載入閃出系統字型。
+- 全站使用完整芫荽體 Iansui-Regular.woff2，新增文字不需重建子集。不要執行舊 scripts/refresh_font.py；它僅保留備查。使用 font-display:optional；不預載大型字型、不隱藏整頁、不等待 document.fonts.ready。慢速首次造訪可用系統字型，避免空白與延遲換字型。
 - 執行 `node --check dist/script.js`。檢查新增翻譯鍵完整、HTML ID 唯一、每張卡片有對應彈窗、原有案例仍在、計數與實際案例數一致。
 - 在既有預覽（通常 `http://127.0.0.1:4173/#stories`）檢查 TW/EN 卡片和完整彈窗、最後一張到第一張的循環、關閉與 Escape、手機寬度下文字和按鈕。不要為了一次文字更新重建專案或覆蓋整個 JS。
 - 完成後簡短說明新增第幾則、選取哪些重點、中英文是否完成、驗證結果。區分本機更新與公開上線；只有實際發布成功才宣稱已上線。
