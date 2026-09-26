@@ -18,6 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify versioned browser assets
+        run: |
+          node fingerprint-assets.cjs
+          git diff --exit-code -- dist/
+          test -z "$(git ls-files --others --exclude-standard dist/)"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

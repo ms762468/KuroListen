@@ -6,6 +6,8 @@
 
 # Continuing work
 
+- After editing dist/styles.css or dist/script.js, run node fingerprint-assets.cjs before committing. Commit the generated hashed files and updated dist/index.html together. Keep older hashed assets so cached HTML remains usable. Edit the original styles.css/script.js, never their generated copies. The Pages workflow checks this before publishing.
+
 - Complete a Git commit after each meaningful stage, with a clear description of the changes.
 - Deploy through GitHub Pages: pushing main triggers .github/workflows/pages.yml, which publishes dist/.
 - Use the full Iansui font (dist/assets/fonts/Iansui-Regular.woff2) throughout the site, including controls. Use font-display:swap and do not hide the page or wait for fonts to load. Avoid preloading the large full font ahead of critical images. Do not revert to the old Iansui-Site subset; the full font supersedes older subset instructions in the testimonial skill.
