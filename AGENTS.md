@@ -10,5 +10,5 @@
 
 - Complete a Git commit after each meaningful stage, with a clear description of the changes.
 - Deploy through GitHub Pages: pushing main triggers .github/workflows/pages.yml, which publishes dist/.
-- Use the full Iansui font (dist/assets/fonts/Iansui-Regular.woff2) throughout the site, including controls. Use font-display:swap and do not hide the page or wait for fonts to load. Avoid preloading the large full font ahead of critical images. Do not revert to the old Iansui-Site subset; the full font supersedes older subset instructions in the testimonial skill.
+- Use local system fonts throughout both Chinese and English pages, including all controls. The user selected system-ui on 2026-09-27. Do not add web-font downloads, font preloads, or page-hiding font gates. This supersedes the older Iansui instructions in skills.
 - Preserve the KURO illustration, the four-value ribbon, the requested About paragraph line breaks, and all ten bilingual booking guidelines.
