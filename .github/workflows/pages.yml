@@ -1,7 +1,7 @@
-name: Deploy website to GitHub Pages
+name: Deploy dev preview to GitHub Pages
 on:
   push:
-    branches: [main]
+    branches: [dev]
   workflow_dispatch:
 permissions:
   contents: read
@@ -12,12 +12,15 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/dev'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: dev
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
