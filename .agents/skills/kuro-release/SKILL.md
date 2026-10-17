@@ -21,11 +21,10 @@ description: 發布來KU通RO正式版本時，檢查 dev 並合併到 main。�
 6. 推送 main。遠端有新提交而拒絕時重新 fetch 並檢視差異，不強推、不盲目重試。推送完成後回到 dev，確認本機與遠端狀態。
 7. 回報發布／合併 SHA、主要變更、驗證與部署結果。若合併產生新的 main 提交而 dev 尚未包含，明確記錄分支差異，不擅自丟棄任何一側變更。
 
-## 合併與正式上線的區別
+## 正式部署與驗證
 
-目前 .github/workflows/pages.yml 只接受 dev，GitHub Pages 的 github-pages 環境也只允許 dev。既有 https://ms762468.github.io/KuroListen/ 是開發預覽。
-
-- 將 dev 合併到 main 並不會自動發布正式網站。
-- 每次發布先檢查是否已有新的正式部署設定。若已設定且在使用者授權範圍內，執行並查核對應 SHA 的正式部署結果。
-- 若尚未設定，仍可完成使用者明確授權的 dev → main 合併；報告「已合併正式分支，正式部署尚未設定」，不能宣稱已正式上線。
-- 不自行把現有預覽網址改成正式站，也不自行新增主機、網域或停用 dev 預覽。需要正式上線但目的地不明時，詢問部署目的地。
+- 正式網站：https://kurolisten.pages.dev/。Cloudflare Pages 專案 kurolisten 已連接 ms762468/KuroListen，main 更新會自動部署；建置命令 node fingerprint-assets.cjs，輸出目錄 dist，根目錄為儲存庫根目錄。
+- Cloudflare 已停用非正式分支的自動預覽。dev 仍由 .github/workflows/pages.yml 部署到 https://ms762468.github.io/KuroListen/，維持開發與正式網址分離。
+- 推送 main 後，在 Cloudflare Workers & Pages → kurolisten → Deployments 核對 Production、main、此次 SHA 與成功狀態，再開啟正式網址檢查本次變更及資源載入。不可只憑合併或推送成功就宣稱上線。
+- 若部署失敗，讀取該次建置紀錄，修復後依授權發布；若無法完成，清楚回報 main 已更新但正式部署失敗，及目前仍在服務的版本（若可確認）。
+- 正常開發與更新 skill 都只提交 dev；只有使用者明確要求正式發布才合併與推送 main。不自行新增網域或更改既有 dev 預覽。
